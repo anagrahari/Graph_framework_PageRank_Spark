@@ -22,14 +22,6 @@ public class PageRank {
 	
 	private static final Pattern SPACES = Pattern.compile("\\s+");
 
-	  static void showWarning() {
-	    String warning = "This is a naive implementation of PageRank " +
-	            "and is given as an example! \n" +
-	            "Please use the PageRank implementation found in " +
-	            "org.apache.spark.graphx.lib.PageRank for more conventional use.";
-	    System.err.println(warning);
-	  }
-
 	  private static class Sum implements Function2<Double, Double, Double> {
 
 		public Double call(Double arg0, Double arg1) throws Exception {
@@ -44,12 +36,6 @@ public class PageRank {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*if (args.length < 2) {
-		      System.err.println("Usage: JavaPageRank <file> <number_of_iterations>");
-		      System.exit(1);
-		    }*/
-
-		   // showWarning();
 
 		    SparkConf sparkConf = new SparkConf().setAppName("JavaPageRank");
 		    JavaSparkContext ctx = new JavaSparkContext(sparkConf);
